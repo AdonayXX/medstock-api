@@ -13,6 +13,17 @@ import { ValidRoles } from '../../interfaces/valid-roles';
 
 @Injectable()
 export class UserRoleGuard implements CanActivate {
+  /**
+   * Creates an instance of the class.
+   *
+   * @param reflector - A helper class from `@nestjs/core` that allows retrieving metadata
+   * attached to classes or methods (handlers) via decorators. It is essential for accessing
+   * custom metadata defined by decorators like `@Roles()` or `@SetMetadata()`.
+   *
+   * The `Reflector` service is typically used within Guards or Interceptors to access
+   * metadata set on the route handler or the controller class to make decisions based
+   * on that metadata (e.g., checking if a user has the required role).
+   */
   constructor(private readonly reflector: Reflector) {}
   canActivate(
     context: ExecutionContext,
