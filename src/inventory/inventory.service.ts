@@ -30,7 +30,7 @@ export class InventoryService {
           code: dto.code,
           expirationDate: new Date(dto.expirationDate),
           quantity: dto.quantity,
-        } as any,
+        },
         manager,
       );
 
